@@ -1,38 +1,130 @@
-.App {
+body{
+  background-color: rgb(70, 66, 66);
+  color: white;
+  height: 100%;
+  width: 100%;
+  padding:0px;
+  margin:0px;
+}
+
+/* ********  APP COMPONENT STYLING   ********* */
+.top_heading{
+  margin-top: 40px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home_text{
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.data_components{
+  color: black;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+/* ********  TYPEAREA COMPONENT STYLING   ********* */
+.typing_area{
+  background-color:#fff;
+  padding: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 1em auto;
+  width: 80%;
+  border-radius: 30px;
+  color: black;
+  box-shadow: 0 9px 24px rgb(0 0 0 / 12%), 0 9px 24px rgb(0 0 0 / 12%);
+  white-space: pre;
 }
 
-.App-link {
-  color: #61dafb;
+.typed_chars, .typing_chars{
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  align-items: center;
+  font-size: 23px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.typing_chars{
+  justify-content: flex-start;
+}
+
+.typed_chars{
+  color: grey;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
+
+.current_char {
+  font-size: 23px;
+  background-color: #78d8bb;
+}
+
+.blink_me {
+  animation: blinker 1s;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.resulted-area{
+  height: 8rem;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  margin: 2rem auto;
+  width: 80%;
+  border-radius: 30px;
+  color: black;
+  box-shadow: 0 9px 24px rgb(0 0 0 / 12%), 0 9px 24px rgb(0 0 0 / 12%);
+  font-size: 16px;
+  overflow: hidden;
+}
+
+
+/* ********  DATA COMPONENT STYLING   ********* */
+.data_items{
+  background-color:rgb(243, 240, 234);
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgb(65, 235, 226);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+}
+
+
+/* ********  FOOTER COMPONENT STYLING   ********* */
+#footer{
+  color: rgb(241, 235, 235);
+  /* font-size: 12px; */
+  display: block;
+  bottom: 10px;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  /* margin-top: 10px; */
+}
+
+#footer > span {
+  color: red;
+}
+
+#footer > a {
+  color: #000000;
+  text-decoration: none;
 }
