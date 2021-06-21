@@ -5,7 +5,7 @@ function Data({name, data}) {
         <>
             <div className="data_items">
                 <p className="data_name">{name}</p>
-                <h1 className="data_content">{data}</h1>
+                <h2 className="data_content">{data}</h2>
             </div>
         </>
     )
