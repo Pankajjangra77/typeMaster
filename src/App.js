@@ -8,7 +8,7 @@ import Particles from 'react-particles-js';
 
 const initialWords = generate();
 
-let countDownStarted = false;
+// let countDownStarted = false;
 
 function App() {
 
@@ -26,7 +26,8 @@ function App() {
   const [lastScore, setLastScore] = useState(0);
   const [totalKeyStrokes, setTotalKeyStrokes] = useState('');
   const [wordCounter, setWordCounter] = useState(0);
-
+  
+  const [countDownStarted, setCountDownStarted] = useState(false);
   const [resultedText, setResultedText] = useState('');
   const [showPopUp, setShowPopUp] = useState(false);
 
@@ -39,7 +40,8 @@ function App() {
     let updatedOutgoingChars = outgoingChars;
     let updatedIncomingChars = incomingChars;
 
-    countDownStarted = true;
+    // countDownStarted = true;
+    setCountDownStarted(true);
 
     if(timer === 0)
     {
@@ -110,7 +112,7 @@ function App() {
             
       setShowPopUp(true);
     }
-  },[timer]);
+  },[timer,wpm]);
 
   useEffect(() => {
     const wpmValue = localStorage.getItem("lastScore");
@@ -124,7 +126,7 @@ function App() {
       params={{
           particles:{
             number:{
-              value: 100,
+              value: 103,
               density:{
                 enable: true,
                 value_area: 900
@@ -176,7 +178,6 @@ function App() {
             <div className="resulted-area">
                   <div className="resulted-text" >{resultedText}</div>
             </div>
-
 
     {showPopUp && <PopUpResult wpm={wpm} cpm={cpm} accuracy={accuracy} />}
     </div>
